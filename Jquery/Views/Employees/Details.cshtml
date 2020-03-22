@@ -1,0 +1,12 @@
+﻿@model Jquery.Models.Employee
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<ul>
+    <li>Position: @Model.Position</li>
+    <li>Office: @Model.Office</li>
+</ul>

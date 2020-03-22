@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Jquery.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees</h2>
+
+<table id="employees" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table> 
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#employees").DataTable({
+                ajax:{
+                    url: "/api/employees",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "position",
+                    },
+                    {
+                        data: "office"
+                    },
+                    {
+                        data: "salary"
+                    }
+                ]
+
+            });
+
+        });
+    </script>
+    
+}
